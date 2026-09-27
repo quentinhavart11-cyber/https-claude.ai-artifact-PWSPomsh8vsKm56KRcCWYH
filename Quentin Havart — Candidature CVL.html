@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quentin Havart — Candidature CVL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#FF3E9A;
+    --pink-deep:#D6208A;
+    --sky:#3FA9F5;
+    --sky-deep:#1E7FCB;
+    --cream:#FFF8F2;
+    --ink:#241A3D;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Nunito Sans',sans-serif;
+    line-height:1.5;
+  }
+  h1,h2,.display{font-family:'Baloo 2',sans-serif;}
+
+  .hero{
+    background:linear-gradient(160deg,var(--sky) 0%,var(--sky-deep) 55%, var(--pink) 130%);
+    color:#fff;
+    padding:3rem 1.5rem 3.5rem;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .tag{
+    display:inline-block;
+    background:rgba(255,255,255,.18);
+    border:2px solid rgba(255,255,255,.5);
+    padding:.3rem .9rem;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.9rem;
+    margin-bottom:1rem;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem,9vw,3.4rem);
+    margin:.2rem 0;
+    font-weight:800;
+    text-shadow:0 3px 0 rgba(0,0,0,.12);
+  }
+  .hero p.slogan{
+    font-size:clamp(1.05rem,4vw,1.3rem);
+    font-weight:600;
+    max-width:32rem;
+    margin:.8rem auto 0;
+  }
+  .paw{
+    position:absolute;
+    font-size:2.6rem;
+    opacity:.35;
+  }
+  .paw.p1{top:1rem;left:1rem;transform:rotate(-15deg);}
+  .paw.p2{bottom:1rem;right:1.2rem;transform:rotate(20deg);}
+
+  main{max-width:40rem;margin:0 auto;padding:0 1.3rem;}
+
+  .objective{
+    background:var(--pink);
+    color:#fff;
+    text-align:center;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:clamp(1.1rem,4.5vw,1.4rem);
+    padding:1.1rem 1.5rem;
+    margin:-1.6rem 1.3rem 2.2rem;
+    border-radius:1rem;
+    box-shadow:0 10px 24px -8px rgba(214,32,138,.55);
+    position:relative;
+    z-index:2;
+  }
+
+  .points{
+    list-style:none;
+    margin:0 0 2.5rem;
+    padding:0;
+    counter-reset:idea;
+  }
+  .points li{
+    display:grid;
+    grid-template-columns:2.6rem 1fr;
+    gap:.9rem;
+    padding:1.1rem 0;
+    border-bottom:2px dashed #f0d9e6;
+  }
+  .points li:last-child{border-bottom:none;}
+  .points li .num{
+    counter-increment:idea;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:1.4rem;
+    color:var(--pink-deep);
+  }
+  .points li .num::before{content: counter(idea);}
+  .points li p{margin:0;font-size:1rem;}
+  .points li strong{color:var(--sky-deep);}
+
+  .signoff{
+    text-align:center;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    color:var(--sky-deep);
+    font-size:1.25rem;
+    margin-bottom:2.5rem;
+  }
+  .signoff span{color:var(--pink-deep);}
+
+  .idea-box{
+    background:#fff;
+    border:3px solid var(--sky);
+    border-radius:1.4rem;
+    padding:1.6rem 1.4rem 1.8rem;
+    margin-bottom:3rem;
+    box-shadow:0 12px 30px -14px rgba(30,127,203,.4);
+  }
+  .idea-box h2{
+    margin:0 0 .3rem;
+    color:var(--pink-deep);
+    font-size:1.5rem;
+  }
+  .idea-box p.lead{margin:0 0 1.1rem;font-size:.95rem;color:#4a4160;}
+  .idea-box textarea{
+    width:100%;
+    min-height:6.5rem;
+    border:2px solid #dfe4ee;
+    border-radius:.8rem;
+    padding:.8rem;
+    font-family:'Nunito Sans',sans-serif;
+    font-size:1rem;
+    resize:vertical;
+  }
+  .idea-box textarea:focus{outline:3px solid var(--sky);outline-offset:1px;}
+  .idea-box button{
+    margin-top:.9rem;
+    width:100%;
+    background:var(--pink);
+    color:#fff;
+    border:none;
+    padding:.9rem 1rem;
+    border-radius:.8rem;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    cursor:pointer;
+    transition:transform .12s ease, background .12s ease;
+  }
+  .idea-box button:hover{background:var(--pink-deep);}
+  .idea-box button:active{transform:scale(.98);}
+  .idea-box .hint{font-size:.8rem;color:#8a8299;margin-top:.6rem;text-align:center;}
+
+  footer{
+    text-align:center;
+    padding:1.5rem 1rem 2.5rem;
+    font-size:.85rem;
+    color:#9a91ab;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .idea-box button{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <span class="paw p1">🐾</span>
+    <span class="tag">Lycée Félix Faure · 2nd 4</span>
+    <h1>Quentin Havart</h1>
+    <p class="slogan">Votez Quentin pour une année moins banale.</p>
+    <span class="paw p2">🐾</span>
+  </div>
+
+  <div class="objective">Objectif : juste kiffer son année</div>
+
+  <main>
+    <ul class="points">
+      <li><span class="num"></span><p><strong>Un programme construit avec vous</strong> — je préfère partir de vos idées plutôt que d'arriver avec un programme tout préparé.</p></li>
+      <li><span class="num"></span><p><strong>Un QR code et une boîte à idées</strong> à la vie scolaire pour recueillir vos propositions tout au long de l'année.</p></li>
+      <li><span class="num"></span><p><strong>Une mascotte pour le lycée</strong>, comme dans les équipes de NBA — parce qu'un peu d'originalité ne fait jamais de mal.</p></li>
+      <li><span class="num"></span><p><strong>Davantage de journées à thème</strong> : journée costumée, journée sans sac, etc.</p></li>
+      <li><span class="num"></span><p><strong>Des concours par niveau</strong> : objet le plus original/drôle, meilleur déguisement, idée la plus fun...</p></li>
+      <li><span class="num"></span><p><strong>Rendre la vie au lycée plus agréable</strong>, avec des choses simples, utiles et surtout réalisables (faire gérer le foyer par des élèves le midi).</p></li>
+      <li><span class="num"></span><p><strong>Et surtout, profiter de l'année</strong> : je ne compte pas transformer le CVL en quelque chose de trop sérieux. L'objectif est aussi de passer de bons moments ensemble.</p></li>
+    </ul>
+
+    <p class="signoff">Votez <span>Quentin</span> pour une année moins banale 🎉</p>
+
+    <div class="idea-box">
+      <h2>Une idée à proposer ?</h2>
+      <p class="lead">Écris-la ici, ça ouvrira ta messagerie avec le message déjà prêt à envoyer.</p>
+      <textarea id="ideaText" placeholder="Ex : des tournois de ping-pong entre classes..."></textarea>
+      <button id="sendIdea" type="button">Envoyer mon idée</button>
+      <p class="hint">Ton idée part directement à Quentin, par mail.</p>
+    </div>
+  </main>
+
+  <footer>Lycée Félix Faure · Candidature CVL · Quentin Havart</footer>
+
+<script>
+  document.getElementById('sendIdea').addEventListener('click', function(){
+    var text = document.getElementById('ideaText').value.trim();
+    var subject = encodeURIComponent('Idée pour le CVL');
+    var body = encodeURIComponent(text || "J'ai une idée pour ton programme CVL :");
+    window.location.href = 'mailto:quentin.havart.11@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+</body>
+</html>
